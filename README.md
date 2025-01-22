@@ -13,3 +13,15 @@
         └ git push -u origin sgjang
     5. push 후 상태 확인
         └ git branch -r
+
+# 파일 변경 시
+    1. 수정 사항 확인
+        └ git status
+    2. 변경 사항 추가
+        └ git add [파일명]
+        2-1. 변경 사항 전체 추가
+            └ git add .
+    3. 변경 사항 커밋
+        └ git commit -m "[커밋 메시지 내용]"
+    4. push
+        └ git push
