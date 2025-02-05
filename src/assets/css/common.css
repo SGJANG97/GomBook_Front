@@ -1,0 +1,460 @@
+/* Reset & Global Styles */
+:root {
+    --primary-color: #5BB6D5;
+    --primary-hover: #3B87BB;
+    --secondary-color: #6E6E6E;
+    --accent-color: #002753;
+    --danger-color: #C00000;
+    --background-color: #E0F7FA;
+    --light-gray: #f9f9f9;
+    --dark-gray: #555;
+    --font-family: 'Roboto', Pretendard, sans-serif;
+    --header-height: 5rem; /* user-header의 높이 */
+    --footer-height: 5rem; /* footer의 높이 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header */
+.user-header {
+    background-color: var(--primary-hover);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height); /* 높이 지정 */
+}
+
+.user-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.user-header-logo img {
+    height: 3.5rem;
+}
+
+.user-header-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 1rem;
+    color: white;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Layout */
+.wrap {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    /*min-height: auto;*/
+    min-height: calc(100vh - var(--header-height) - var(--footer-height)); /* 유동적 크기 */
+}
+
+.left-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-panel {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-hover);
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: white;
+    height: var(--footer-height); /* 높이 지정 */
+}
+
+footer a {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Side Menu */
+.user-side-menu {
+    width: 14rem;
+    background-color: #ffffff;
+    height: 100vh;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+}
+
+.menu-list {
+    list-style: none;
+}
+
+.menu-link {
+    display: block;
+    font-size: 1rem;
+    color: var(--secondary-color);
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.section-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 2;
+    background: white;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+}
+
+/* View More */
+.view-more {
+    font-size: 0.875rem;
+    color: var(--primary-hover);
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+}
+
+.view-more:hover {
+    text-decoration: underline;
+}
+
+/* Section Divider */
+.section-divider {
+    margin: 1.25rem 0;
+    border-bottom: 2px solid var(--primary-hover);
+}
+
+/* Book List */
+.book-list-container {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    margin: 1.25rem 0;
+}
+
+.book-list {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0.625rem;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.book-list::-webkit-scrollbar {
+    display: none;
+}
+
+.book-card {
+    background-color: white;
+    border-radius: 0.625rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.625rem;
+    flex: 0 0 calc((100% / 5.5) - 1.25rem);
+    border: 1px solid var(--dark-gray);
+}
+
+.book-card:hover {
+    transform: translateY(-0.3125rem);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Book Image */
+.book-image {
+    width: 100%;
+    height: 12rem; /* 조정된 이미지 크기 */
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+/* Book Title */
+.book-title {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.625rem;
+    margin-top: 0.5rem;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.book-title:hover {
+    color: var(--primary-color);
+}
+
+/* Navigation Buttons */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba(0, 39, 83, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.scroll-button:hover {
+    background-color: rgba(0, 39, 83, 1);
+}
+
+.scroll-left {
+    left: -0.625rem;
+}
+
+.scroll-right {
+    right: -0.625rem;
+}
+
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /*min-height: 75vh; !* 화면 전체 높이 기준으로 중앙 정렬 *!*/
+    min-height: calc(90vh - var(--header-height) - var(--footer-height)); /* 헤더와 푸터 제외 */
+    padding: 2rem 0; /* 좌우 패딩 제거, 위아래만 패딩 유지 */
+}
+
+/* Login Page Styles */
+.login-wrap {
+    width: 100%;
+    max-width: 450px; /* 크기 조정 */
+    max-height: 90vh; /* 최대 높이 제한하여 화면 초과 방지 */
+    overflow: auto; /* 내부 요소가 넘칠 경우 스크롤 */
+    margin: auto;
+    padding: 2.5rem;
+    font-size: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.login-wrap .inner-content {
+    width: 100%;
+    max-width: 380px;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Input Fields */
+.login-wrap .t-inp {
+    padding: 16px;
+    font-size: 16px;
+    height: 48px;
+    border-radius: 6px;
+}
+
+/* Logo */
+.login-wrap .logo img {
+    width: 220px;
+    margin-bottom: 1.5rem;
+}
+
+/* Input Container */
+.login-wrap .inp-cont {
+    margin-bottom: 1rem;
+}
+
+.login-wrap .input-box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--dark-gray);
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.login-wrap .input-box:focus {
+    border-color: var(--primary-color);
+}
+
+/* Error Messages */
+.login-wrap .t-text {
+    font-size: 14px;
+    color: var(--danger-color);
+    margin-top: 4px;
+    /*display: block; !* 인라인 요소가 아닌 블록 요소로 설정 *!*/
+    /*width: 100%; !* input-box와 동일한 너비 *!*/
+    text-align: left;
+    padding-left: 30px; /* input-box와 동일한 padding 유지 */
+    /*box-sizing: border-box; !* 패딩이 width에 포함되도록 설정 *!*/
+}
+
+/* Save Login & ID */
+.login-wrap .login-save-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    font-size: 14px;
+}
+
+.login-wrap .login-save-box label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login-wrap .login-save-box input {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.login-wrap .login-save-box .text {
+    font-size: 15px;
+}
+
+/* Buttons */
+.login-wrap .btn-area {
+    margin-top: 1.25rem;
+}
+
+.login-wrap .btn.ty1 {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.login-wrap .btn.ty1:hover {
+    background: var(--primary-hover);
+}
+
+/* Links */
+.login-wrap .login-link-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 14px;
+}
+
+.login-wrap .login-link-box a {
+    color: var(--primary-hover);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.login-wrap .login-link-box a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .book-card {
+        flex: 0 0 calc((100% / 3.5) - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .user-side-menu {
+        display: none;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .book-card {
+        flex: 0 0 calc((100% / 2.5) - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .book-card {
+        flex: 0 0 calc((100% / 1.5) - 20px);
+    }
+}
