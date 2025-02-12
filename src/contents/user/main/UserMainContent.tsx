@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import SectionHeader from "./SectionHeader";
 import BookCard from "./BookCard";
 import { userBookPath } from "src/routes/path";
-import "src/assets/css/common.css";
+// import "src/assets/css/common.css";
 
 interface Book {
     id: string;

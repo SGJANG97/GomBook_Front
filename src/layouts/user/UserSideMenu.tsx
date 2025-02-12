@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "src/assets/css/common.css";
+// import "src/assets/css/common.css";
 
 export default function UserSideMenu() {
     return (
         <aside className="user-side-menu">
             <ul className="menu-list">
                 <li>
-                    <Link to="/checkout" className="menu-link">
+                    <Link to="/book" className="menu-link">
                         도서 대여
                     </Link>
                 </li>

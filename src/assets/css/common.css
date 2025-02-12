@@ -8,6 +8,7 @@
     --background-color: #E0F7FA;
     --light-gray: #f9f9f9;
     --dark-gray: #555;
+    --white: #FFFFFF;
     --font-family: 'Roboto', Pretendard, sans-serif;
     --header-height: 5rem; /* user-header의 높이 */
     --footer-height: 5rem; /* footer의 높이 */
@@ -22,7 +23,7 @@
 body {
     font-family: var(--font-family);
     line-height: 1.6;
-    background-color: var(--background-color);
+    background-color: var(--white);
     color: var(--secondary-color);
 }
 
@@ -37,7 +38,7 @@ ul {
 
 /* Header */
 .user-header {
-    background-color: var(--primary-hover);
+    background: linear-gradient(to right, var(--accent-color), var(--primary-hover), var(--primary-color));
     padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
@@ -55,6 +56,10 @@ ul {
 
 .user-header-logo img {
     height: 3.5rem;
+    background-color: var(--light-gray); /* 배경을 흰색으로 설정 */
+    /*padding: 0.5rem; !* 테두리 안쪽 여백 *!*/
+    /*border: 2px solid black; !* 검은색 테두리 추가 *!*/
+    border-radius: 3px; /* 모서리를 둥글게 */
 }
 
 .user-header-nav {
@@ -132,9 +137,10 @@ footer a:hover {
     height: 100vh;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);*/
     position: sticky;
     top: 0;
+    border: 1px solid var(--dark-gray);
 }
 
 .menu-list {
@@ -309,6 +315,7 @@ footer a:hover {
     background: white;
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--dark-gray);
 }
 
 .login-wrap .inner-content {
@@ -432,10 +439,68 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* 도서 목록 컨테이너 */
+.book-content {
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+}
+
+/* 도서 목록 제목 */
+.book-content h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    /*text-align: center;*/
+    margin-bottom: 1.5rem;
+}
+
+.book-list-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/* 페이지네이션 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.page-button {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.page-button:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.page-button.active {
+    background-color: var(--primary-hover);
+    color: var(--white);
+}
+
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
     .book-card {
         flex: 0 0 calc((100% / 3.5) - 20px);
+    }
+    .book-list-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -451,10 +516,18 @@ footer a:hover {
     .book-card {
         flex: 0 0 calc((100% / 2.5) - 20px);
     }
+
+    .book-list-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
     .book-card {
         flex: 0 0 calc((100% / 1.5) - 20px);
+    }
+
+    .book-list-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

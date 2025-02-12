@@ -5,7 +5,7 @@ import UserHeader from 'src/layouts/user/UserHeader';
 import UserFooter from 'src/layouts/user/UserFooter';
 import UserSideMenu from 'src/layouts/user/UserSideMenu';
 
-import "src/assets/css/common.css";
+// import "src/assets/css/common.css";
 
 export default function UserLayout() {
     const footerRef = useRef<HTMLDivElement>(null);

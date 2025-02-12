@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router';
-import { APIGet, APIPost, APIPostFiles } from '../../../gombook/src/lib/api/api';
-import { storeUserModalActions } from '../../../gombook/src/lib/store/userModalStore';
+import { APIGet, APIPost, APIPostFiles } from 'src/lib/api/api';
+import { storeUserModalActions } from 'src/lib/store/userModalStore';
 import { ResponseModel } from 'src/models/response.model';
 import { haldleApiCallExpPath } from 'src/utils/commonHandler';
 

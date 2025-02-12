@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import "src/assets/css/common.css";
+// import "src/assets/css/common.css";
 
 import { apiPostUserLogin } from "src/lib/api/apiPath";
 import {

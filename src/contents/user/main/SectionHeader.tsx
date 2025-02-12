@@ -1,5 +1,5 @@
 import React from "react";
-import "src/assets/css/common.css";
+// import "src/assets/css/common.css";
 
 interface SectionHeaderProps {
     title: string;

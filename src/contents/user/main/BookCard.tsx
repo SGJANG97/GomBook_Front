@@ -1,6 +1,6 @@
 import React from "react"
 import { useNavigate } from "react-router-dom";
-import "src/assets/css/common.css";
+// import "src/assets/css/common.css";
 
 interface Book {
     id: string;
