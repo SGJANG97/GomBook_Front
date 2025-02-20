@@ -1,0 +1,394 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
+}
+
+html,
+body {
+  height: 100%;
+  color: #191919;
+  /* min-width: 1300px; */
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+article,
+aside,
+hgroup,
+header,
+footer,
+figure,
+figcaption,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+address {
+  display: inline-block;
+  font-style: normal;
+}
+
+main,
+article,
+aside,
+hgroup,
+header,
+footer,
+figure,
+figcaption,
+nav,
+section {
+  display: block;
+}
+
+img,
+video {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+img {
+  /* image-rendering: -webkit-optimize-contrast; */
+  vertical-align: middle;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+em {
+  font-style: normal;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  /* height: 100%; */
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  font-weight: normal;
+  font-family: 'Pretendard', sans-serif;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 검색 폼 */
+table {
+  table-layout: fixed;
+  width: 100%;
+  max-width: 100%;
+  border-color: inherit;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  margin: 0;
+}
+
+select {
+  cursor: pointer;
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+button {
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: none;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+input,
+button,
+textarea,
+select {
+  outline: none;
+}
+
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* placeholder */
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-size: 16px;
+  color: #b1b1b1;
+  text-align: left;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 16px;
+  color: #b1b1b1;
+  text-align: left;
+}
+
+input:-ms-input-placeholder {
+  /* IE 10+ */
+  font-size: 16px;
+  color: #b1b1b1 !important;
+  text-align: left !important;
+}
+
+textarea:-ms-input-placeholder {
+  /* IE 10+ */
+  font-size: 16px;
+  color: #b1b1b1 !important;
+  text-align: left !important;
+}
+
+::-ms-input-placeholder {
+  /* IE 10+ */
+  font-size: 16px;
+  color: #b1b1b1;
+  text-align: left !important;
+}
+
+::-ms-clear {
+  display: none;
+}
+
+::-ms-reveal {
+  display: none;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* font */
+@font-face {
+  font-family: Pretendard;
+  font-weight: 400;
+  font-style: normal;
+  src:
+    url('src/assets/fonts/Pretendard-Regular.eot?') format('eot'),
+    url('src/assets/fonts/Pretendard-Regular.woff') format('woff'),
+    url('src/assets/fonts/Pretendard-Regular.woff2') format('woff2'),
+    url('src/assets/fonts/Pretendard-Regular.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: Pretendard;
+  font-weight: 500;
+  font-style: normal;
+  src:
+    url('src/assets/fonts/Pretendard-Medium.eot?') format('eot'),
+    url('src/assets/fonts/Pretendard-Medium.woff') format('woff'),
+    url('src/assets/fonts/Pretendard-Medium.woff2') format('woff2'),
+    url('src/assets/fonts/Pretendard-Medium.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: Pretendard;
+  font-weight: 600;
+  font-style: normal;
+  src:
+    url('src/assets/fonts/Pretendard-SemiBold.eot?') format('eot'),
+    url('src/assets/fonts/Pretendard-SemiBold.woff') format('woff'),
+    url('src/assets/fonts/Pretendard-SemiBold.woff2') format('woff2'),
+    url('src/assets/fonts/Pretendard-SemiBold.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: Pretendard;
+  font-weight: 700;
+  font-style: normal;
+  src:
+    url('src/assets/fonts/Pretendard-Bold.eot?') format('eot'),
+    url('src/assets/fonts/Pretendard-Bold.woff') format('woff'),
+    url('src/assets/fonts/Pretendard-Bold.woff2') format('woff2'),
+    url('src/assets/fonts/Pretendard-Bold.ttf') format('opentype');
+}
+
+html.fix,
+body.fix {
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  /* 이외의 브라우저 */
+  -ms-scroll-chaining: none;
+  overscroll-behavior: none;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+}
+
+@media screen and (max-width: 1920px) {
+  html {
+    font-size: calc(16 / 1920 * 100vw) !important;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  html {
+    font-size: calc(16 / 1320 * 100vw) !important;
+  }
+}
+
+/* 추후 반영 css */
+/* pc 스크롤 */
+@media screen and (max-width: 900px) {
+  html {
+    width: 900px;
+    overflow-x: auto;
+    font-size: 12px !important;
+  }
+}
+
+@media screen and (pointer: coarse) and (max-width: 900px),
+  screen and (hover: none) and (max-width: 900px),
+  screen and (hover: on-demand) and (max-width: 900px) {
+  html {
+    width: auto;
+    overflow-x: hidden;
+    font-size: calc(16 / 900 * 100vw) !important;
+  }
+}
+
+@media screen and (pointer: coarse) and (max-width: 480px),
+  screen and (hover: none) and (max-width: 480px),
+  screen and (hover: on-demand) and (max-width: 480px) {
+  html {
+    font-size: calc(16 / 393 * 100vw) !important;
+  }
+}
+
+/* 추후 반영 삭제 css */
+/* @media screen and(max-width:768px) {
+  html{
+    font-size: calc(16 / 393 * 100vw) !important;
+  }
+} */
